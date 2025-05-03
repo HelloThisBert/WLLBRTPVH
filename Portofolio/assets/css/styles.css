@@ -8,15 +8,26 @@
 }
 
 :root{
-    --bg-color: #000;
-    --text-color: #fff;
-    --main-color:#797979;
+  --base-color: #ffffff;
+  --base-variant: #fff5f0;
+  --text-color: #333333;
+  --primary-color: #ff5e00;
+  --secondary-color: #ff8533;
+  --toggler:#ffffff;
+}
 
+.dark-mode{
+  --base-color: #0a0a0a;
+  --base-variant: #1a1a2e;
+  --text-color: #ffffff;
+  --primary-color: #225dff;
+  --secondary-color: #3b82f6;
+  --toggler:#ffffff;
 }
 
 body{
     min-height: 100vh;
-    background: var(--bg-color);
+    background: var(--base-color);
     color: var(--text-color);
 }
 /* Header untuk memisahkan logo, nav, dan icon icon lain */
@@ -34,19 +45,28 @@ body{
     transition: all .5s ease;
   }
   
-  @font-palette-values --Custom {
-    font-family: 'Nabla';
-    base-palette: 4;
+  .Logo-Text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  
-  .Logo-Text h1 {
-    font-family: 'Nabla',system-ui;
-    font-size: 1.6rem;
+  .Logo-Text img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: all .3s ease;
+  }
+  .Logo-Text .text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .Logo-Text h1,h2{
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     font-weight: 400;
     font-style: normal;
-    font-palette: --Custom;
   }
 
 
@@ -72,11 +92,11 @@ body{
   }
 
   nav ul li a:hover {
-    color:#303030;
+    color: var(--primary-color);
   }
 
   nav ul li a.active {
-    color: #dfdfdf;
+    color: var(--primary-color);
     position: relative;
 }
 
@@ -84,38 +104,89 @@ nav ul li a.active::after {
     content: '';
     width: 100%;
     height: 2px;
-    background: white;
+    background: var(--secondary-color);
     position: absolute;
     left: 0;
     bottom: -4px;
 }
 
   /* Social media icons styling */
-  .social-media {
-    display: flex;
-    align-items: center;
+  
+    .social-media {
+      display: flex;
+      align-items: center;
+      gap: 15px;
   }
   
   .social-media a {
-    color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-right: 20px;
-    font-size: 1.2rem;
-    transition: all .3s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--base-variant);
+      border-radius: 50%;
+      transition: all .3s ease;
   }
   
-  .social-media a:hover {
-    color: #bebebe;
+  .social-media a i {
+      width: 100px;  /* Mengontrol ukuran icon dengan width */
+      height: 100px; /* Pastikan height sama dengan width */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
   }
-
-  .ri-moon-fill{
-    padding-left: 5px;
-    background-color: #303030;
+  .social-media a:hover i {
+      color: var(--primary-color);
+  }
+/* Toggle switch styling */
+  .toggle-wrapper {
+    position: relative;
+    width: 70px;
+    height: 34px;
+    cursor: pointer;
+  }
+  
+  .toggle-switch {
+    width: 70px;
+    height: 34px;
+    background-color: var(--primary-color);
     border-radius: 25px;
-    width: 40px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-switch .ri-sun-fill {
+    color: #ffffff;
+    width: 18px;
+    margin-left: 4px;
+  }
+  
+  .toggle-switch .ri-moon-fill {
+    color: #f5f5f5;
+    width: 18px;
+    margin-right: 4px;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 26px;
+    height: 26px;
+    background-color: var(--toggler);
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  body.dark-mode .toggle-slider {
+    transform: translateX(36px);
   }
   
   /* Menu icon for mobile view */
@@ -134,10 +205,7 @@ nav ul li a.active::after {
     nav ul li {
       padding: 0 15px;
     }
-    .Logo-Text h1{
-        font-size: 1.5rem;
-        padding-left: 10px;
-    }
+    
   }
   
   @media (max-width: 1090px) {

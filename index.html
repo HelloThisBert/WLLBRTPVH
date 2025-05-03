@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!--Information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wellbert Portofolio</title>
-    <link rel="stylesheet" href="./Portofolio/assets/css/styles.css"> <!-- Link to external CSS file -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/> <!-- Link to Remix Icon CSS -->
+    <link
+      rel="icon"
+      href="./Portofolio/assets/svg/Favicon.svg"
+      type="image/png"
+    />
+    <meta
+      name="description"
+      content="Wellbert Portofolio - A showcase of my work and skills."
+    />
+    <meta
+      name="keywords"
+      content="Portofolio, Web Development, Projects, Skills, Fullstack Developer"
+    />
+    <meta name="author" content="Wellbert P. V. H." />
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="./Portofolio/assets/css/styles.css" />
+
+    <!-- Link to Remix Icon CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <!-- Link to Google Fonts AudioWide-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <!-- Link to Google Fonts Nabla -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nabla&display=swap" rel="stylesheet">
-    
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="main-navigation">
-        <a href="#" class="Logo-Text"><h1>WLLBRTPVH.</h1></a>
-        <div class="nav-links">
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skill</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+      <div class="Logo-Text">
+        <img src="./Portofolio/assets/svg/Alt Logo Head.svg" alt="Logo" />
+        <div class="text-wrapper">
+          <h1>Wellbert</h1>
+          <h2>Portofolio</h2>
         </div>
-        <div class="social-media">
-            <a href="#"><i class="ri-github-fill"></i></a>
-            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
-            <a href="#"><i class="ri-moon-fill"></i></a>
-            <div id="menu-icon"><i class="ri-menu-line"></i></div>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skill</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a href="#"><i class="ri-github-fill"></i></a>
+        <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+        <!--Toggle Darkmode/LightMode-->
+        <div class="toggle-wrapper" id="dark-mode-toggle">
+          <div class="toggle-switch">
+            <i class="ri-moon-fill"></i>
+            <i class="ri-sun-fill"></i>
+            <div class="toggle-slider"></div>
+          </div>
         </div>
+        <div id="menu-icon"><i class="ri-menu-line"></i></div>
+      </div>
     </nav>
-   
-</body>
+  </body>
 
-    <script src="./Portofolio/assets/js/script.js"></script> <!-- Link to external JavaScript file -->
+  <script src="./Portofolio/assets/js/script.js"></script>
+  <!-- Link to external JavaScript file -->
 </html>
-
