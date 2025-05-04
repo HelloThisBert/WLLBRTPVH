@@ -7,28 +7,33 @@
     list-style: none;
 }
 
-:root{
-  --base-color: #ffffff;
-  --base-variant: #fff5f0;
-  --text-color: #333333;
-  --primary-color: #ff5e00;
-  --secondary-color: #ff8533;
-  --toggler:#ffffff;
+:root {
+  --background-color: #f0f2f5; /* Light gray for background */
+  --primary-color: #dddbdb; /* Blue-gray for primary elements */
+  --secondary-color: #3a3a3a; /* Blue-gray for secondary elements */
+  --main--text-color: #121820; /* Dark gray for main text */
+  --secondary-text-color: #1e1e1e; /* Dark gray for secondary text */
+  --primary-hover: #898989; /* Light blue-gray for hover states */
+  --secondary-hover: #bcbcbc; /* Light blue-gray for hover states */
+  --menu-side:#ffffff ; /* White color for menu background */
+  --base:#ffffff ; /* White color for base background */
 }
 
-.dark-mode{
-  --base-color: #0a0a0a;
-  --base-variant: #1a1a2e;
-  --text-color: #ffffff;
-  --primary-color: #225dff;
-  --secondary-color: #3b82f6;
-  --toggler:#ffffff;
+.dark-mode {
+  --background-color: #121820 ;
+  --primary-color:#0d4077a5; /* Darker blue-gray for primary elements */
+  --secondary-color:#123458 ; /* Darker blue-gray for secondary elements */
+  --main--text-color: #f0f2f5; /* Light gray for main text */
+  --secondary-text-color: #b0b8c1; /* Light gray for secondary text */
+  --primary-hover:#95c7ff  ; /* Darker blue-gray for hover states */
+  --secondary-hover:#9bcbff  ; /* Darker blue-gray for hover states */
+  --base:#ffffff ; /* White color for base background */
 }
 
 body{
     min-height: 100vh;
-    background: var(--base-color);
-    color: var(--text-color);
+    background: var(--background-color);/* Warna background */
+    color: var(--main--text-color); /* Warna teks */
 }
 /* Header untuk memisahkan logo, nav, dan icon icon lain */
 .main-navigation {
@@ -84,27 +89,27 @@ body{
   }
   
   nav ul li a {
-    color: var(--text-color);
+    color: var(--main--text-color); /* Warna teks navbar */
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
     transition: all .3s ease;
   }
-
+  
   nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--primary-hover); /* Warna teks saat hover */
   }
 
   nav ul li a.active {
-    color: var(--primary-color);
+    color: var(--primary-text-color); /* Warna teks saat aktif */
     position: relative;
 }
 
-nav ul li a.active::after {
+nav ul li a.active::after { /* Garis bawah pada teks aktif */
     content: '';
     width: 100%;
     height: 2px;
-    background: var(--secondary-color);
+    background: var(--secondary-hover);
     position: absolute;
     left: 0;
     bottom: -4px;
@@ -124,21 +129,19 @@ nav ul li a.active::after {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--base-variant);
+      background: var(--secondary-color); /* Warna latar belakang icon */
       border-radius: 50%;
       transition: all .3s ease;
   }
   
   .social-media a i {
-      width: 100px;  /* Mengontrol ukuran icon dengan width */
-      height: 100px; /* Pastikan height sama dengan width */
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-color);
+      color: var(--base); /* Warna icon */
   }
   .social-media a:hover i {
-      color: var(--primary-color);
+      color: var(--secondary-hover);  /* Warna icon saat hover */
   }
 /* Toggle switch styling */
   .toggle-wrapper {
@@ -151,7 +154,7 @@ nav ul li a.active::after {
   .toggle-switch {
     width: 70px;
     height: 34px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);   /* Warna latar belakang toggle switch */
     border-radius: 25px;
     position: relative;
     cursor: pointer;
@@ -163,13 +166,13 @@ nav ul li a.active::after {
   }
   
   .toggle-switch .ri-sun-fill {
-    color: #ffffff;
+    color: #ffd900;   /* Warna icon matahari */
     width: 18px;
     margin-left: 4px;
   }
   
   .toggle-switch .ri-moon-fill {
-    color: #f5f5f5;
+    color: #f5f5f5;   /* Warna icon bulan */
     width: 18px;
     margin-right: 4px;
   }
@@ -180,7 +183,7 @@ nav ul li a.active::after {
     top: 4px;
     width: 26px;
     height: 26px;
-    background-color: var(--toggler);
+    background-color: var(--base);/* Warna latar belakang slider */
     border-radius: 50%;
     transition: transform 0.3s;
   }
@@ -216,11 +219,11 @@ nav ul li a.active::after {
     
     nav ul {
         position: fixed;
-        top: 8%;
+        top: 10%;
         right: -100%; /* Hide menu initially */
         width: 270px;
         height: auto;
-        background: rgba(32, 32, 32, 0.9);
+        background: var(--primary-color); /* Background color for menu */
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
