@@ -21,7 +21,7 @@
 
 .dark-mode {
   --background-color: #121820 ;
-  --primary-color:#0d4077a5; /* Darker blue-gray for primary elements */
+  --primary-color:#0d4077a5; /* Darker blue-gray for primary elements */  
   --secondary-color:#123458 ; /* Darker blue-gray for secondary elements */
   --main--text-color: #f0f2f5; /* Light gray for main text */
   --secondary-text-color: #b0b8c1; /* Light gray for secondary text */
@@ -35,6 +35,8 @@ body{
     background: var(--background-color);/* Warna background */
     color: var(--main--text-color); /* Warna teks */
 }
+
+
 /* Header untuk memisahkan logo, nav, dan icon icon lain */
 .main-navigation {
     position: fixed;
@@ -198,7 +200,92 @@ nav ul li a.active::after { /* Garis bawah pada teks aktif */
     cursor: pointer;
     padding-right:10px ;
   }
+
+
+
+
+
+
+  /* <--Bagian Section Tiap Halaman--> */
+  section{
+    height: 100vh; /* Setiap bagian mengambil tinggi 100% viewport */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  #home {
+    background: var(--background-color);
+    color: #333;
+    margin-top:5%;
+}
+/* sementara nanti akan dihapus
+#about {
+    background-color:var(--base)
+}
+
+#services {
+    background-color: var(--background-color);
+}
+
+#projects {
+    background-color: var(--base);
+}
+
+#contact {
+  background-color: var(--background-color);
+} */
+
+.container.title {
+  margin: 0 auto;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
   
+}
+
+.landing-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--main--text-color);
+  padding-bottom: 1%;
+}
+.landing-text h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--secondary-text-color);
+}
+
+.laptop img{
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 800px; /* Increased from 600px to 800px */
+  animation: slide-in 1s ease-in-out;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <--Bagian Responsive Layout--> */
+
   /* Responsive adjustments */
   @media (max-width: 1280px) {
     .main-navigation {
@@ -208,6 +295,7 @@ nav ul li a.active::after { /* Garis bawah pada teks aktif */
     nav ul li {
       padding: 0 15px;
     }
+
     
   }
   
@@ -243,4 +331,16 @@ nav ul li a.active::after { /* Garis bawah pada teks aktif */
     nav ul li a {
       font-size: 1.1rem;
     }
+}
+
+@media (max-width: 768px) {
+.container.title {
+    padding: 0 20px;
+}
+  .landing-text h1 {
+    font-size: 2.5rem;
+  }
+  .landing-text h2 {
+    font-size: 1.2rem;
+  }
 }
